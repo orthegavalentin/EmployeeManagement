@@ -1,21 +1,21 @@
 package com.orthega.EmployeeManagement.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 
 @Entity
-public class Employee {
+public class Employee  {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false,updatable = false)
     private Long id;
-    private String name="lentino";
-    private String email="iravadu@gmail.com";
-    private String jobTitle="fullStackDevelopper";
-    private String phone="0766530740";
+    private String name;
+    private String email;
+    private String jobTitle;
+    private String phone;
     private String imageUrl;
+    @Column(nullable = false,updatable = false)
     private String employeeCode;
 
     public Long getId() {
